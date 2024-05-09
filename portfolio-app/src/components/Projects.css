@@ -1,0 +1,23 @@
+/* src/components/Introduction.css */
+.project-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: rgb(216, 216, 216);
+    align-items: center;
+    align-content: center;
+  }
+  
+  .parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .project-bg {
+    background-image: url('/src/assets/background/bg6.png');
+  }
+  
+  
+  /* Repeat for other components with their respective backgrounds and specific styles */
+  
