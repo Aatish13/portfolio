@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.a43eb45b.css",
-    "main.js": "/portfolio/static/js/main.d7b31920.js",
+    "main.css": "/portfolio/static/css/main.297d4f8e.css",
+    "main.js": "/portfolio/static/js/main.216d4f1f.js",
     "static/js/453.f4fbaa6d.chunk.js": "/portfolio/static/js/453.f4fbaa6d.chunk.js",
     "static/media/AugmentedRealityUseCases.mp4": "/portfolio/static/media/AugmentedRealityUseCases.de7ee6a4b6cf205ed9d2.mp4",
     "static/media/stance_detection.webp": "/portfolio/static/media/stance_detection.c6bdc6b01deb52ed10d8.webp",
@@ -12,12 +12,12 @@
     "static/media/Edge-computing-image.webp": "/portfolio/static/media/Edge-computing-image.f4cd2715d61247ebf3a3.webp",
     "static/media/Aatish_Chaudhari_Resume.pdf": "/portfolio/static/media/Aatish_Chaudhari_Resume.e50f37d5a7e5ebe4afa1.pdf",
     "index.html": "/portfolio/index.html",
-    "main.a43eb45b.css.map": "/portfolio/static/css/main.a43eb45b.css.map",
-    "main.d7b31920.js.map": "/portfolio/static/js/main.d7b31920.js.map",
+    "main.297d4f8e.css.map": "/portfolio/static/css/main.297d4f8e.css.map",
+    "main.216d4f1f.js.map": "/portfolio/static/js/main.216d4f1f.js.map",
     "453.f4fbaa6d.chunk.js.map": "/portfolio/static/js/453.f4fbaa6d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a43eb45b.css",
-    "static/js/main.d7b31920.js"
+    "static/css/main.297d4f8e.css",
+    "static/js/main.216d4f1f.js"
   ]
 }
