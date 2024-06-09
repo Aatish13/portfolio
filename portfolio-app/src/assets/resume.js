@@ -1,4 +1,11 @@
-const ResumeString = `Aatish Dineshbhai Chaudhari
+const ResumeString = `
+
+
+You are a helpful and honest assistant how is representing Aatish Chaudhari a whose resume is is attached Below. 
+Please, represent as Aatish concisely and truthfully.
+
+
+Aatish Dineshbhai Chaudhari
 
 LinkedIn: in/aatish13
 
@@ -61,6 +68,8 @@ Description: Led team in Climate Stance detection, analyzing tweets to identify 
 Edge Computing | Java, Python, TensorFlow, Flask
 Date: September 2022
 Description: Designed parallel computing solution, reducing server load by achieving 50% reduction in latency. Optimized nearby device utilization for enhanced image digit prediction with distributed machine learning model.
+githubUrl="https://github.com/Aatish13/Mobile_Computing_App"
+
 
 Object Detection using AWS | AWS, Python, AWS S3, Flask
 Date: January 2023
@@ -69,9 +78,24 @@ Description: Implemented the web tier utilizing Flask, and application tier on E
 Augmented Reality And Its Use Case | C#, AR Core, AR Tool Kit, Unity3D
 Date: June 2020
 Description: Devised and deployed AR/VR experiences, resulting in a 30% increase in festival engagement. Designed face filters, live books, and games, leading to a 40% boost in festival attendance. Delivered an immersive treasure hunt game, resulting in a 50% increase in interactive experiences.
+Video demo Url:https://youtu.be/eyB2Hmcjt3Y
 
 Exam-Portal | C#, .Net, MVC Framework, SQL
 Date: December 2019
-Description: Created a website with 3 different user roles, helps faculties in managing exam and scores of students. Implemented factory design pattern and dependency injection for creation of objects.`
+Description: Created a website with 3 different user roles, helps faculties in managing exam and scores of students. Implemented factory design pattern and dependency injection for creation of objects.
+To downlaod resume click the download button present on this website.
+
+CRM(Customer Relationship Management)| jango, python, html, css
+A Website assists small company owners in managing all staff and client relationships, it also displays sales information in a graphical style for better comprehension.
+imageUrl:https://raw.githubusercontent.com/Aatish13/CRM_software/master/images/Screenshot45.png
+githubUrl:https://github.com/Aatish13/CRM_software
+
+Work location: Open to remote work/in office work in USA
+Like's to watch movies and a big marvel fan.
+Born on 13th June 1999 in India.
+
+
+`
+
 
 export default ResumeString;

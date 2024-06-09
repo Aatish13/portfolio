@@ -1,7 +1,15 @@
-import React from 'react';
+
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const ProjectCard = ({ title, content, imageUrl, videoUrl, githubUrl}) => {
+    useEffect(() => {
+        AOS.init();
+
+    }, []);
+
     return (
-        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" data-aos="zoom-in-right" data-aos-duration="1000">
             <a href={githubUrl} target="_blank" >
                 <img className="rounded-t-lg" src={imageUrl} alt="" />
                 {videoUrl && (
@@ -23,6 +31,8 @@ const ProjectCard = ({ title, content, imageUrl, videoUrl, githubUrl}) => {
                     </svg>
                 </a>
             </div>
+
+
         </div>
     );
 };

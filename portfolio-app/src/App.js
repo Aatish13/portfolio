@@ -5,6 +5,7 @@ import Introduction from './components/Introduction';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import ChatBot from './components/chat_components/ChatBot';
+import Skills from './components/Skills';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <div className="w-3/3">
         
         <Introduction></Introduction>
+        <Skills></Skills>
         <Experience></Experience>
         <Projects></Projects>
         <Contact></Contact>

@@ -18,8 +18,7 @@ function Projects() {
       <h2 className="text-3xl font-semibold text-gray-900 dark:text-white py-2">Projects</h2>
       <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="grid gap-4">
-
+        <div className="grid gap-4 ">
         <div>
             <ProjectCard 
               title="Student Help AI bot" 
