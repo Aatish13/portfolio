@@ -1,19 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import ResumeString from '../assets/resume';
-
+import { Context } from '../App';
 function AISearchBox() {
     const [replytext, setReplyText] = useState('');
-    const [messages, setMessages] = useState([]);
+    const [messages, setMessages] = useContext(Context);
     const [requestText, setRequestText] = useState('');
     useEffect(() => {
-        setMessages([
-            {
-                "role": "system",
-                "content": ResumeString
-            }
-        ]);
         setReplyText("A passionate and experienced Software Engineer with expertise in Cloud Computing, Distributed Systems, Computer Vision, and Data Visualization. How can I help You today?");
-   
     }, []);
 
     const handleSendMessage = (e) => {
@@ -23,11 +16,7 @@ function AISearchBox() {
                 {
                     "model": "meta-llama/Meta-Llama-3-8B-Instruct",
                     "messages": [...messages,
-                    { role: 'user', content: `Answer in short.
-                    Only reply with the information that is in the resume.
-                    links should be in html format with underline.
-                    Don't provide html for other information. 
-                    Reply to this question under 50 words.
+                    { role: 'user', content: `Answer in 50 words.
                     Question:${requestText}` }],
                     "parameters": {
                         "max_new_tokens": 1000,
@@ -111,11 +100,10 @@ function AISearchBox() {
             query(
                 {
                     "model": "meta-llama/Meta-Llama-3-8B-Instruct",
-                    "messages": [{
-                        "role": "system",
-                        "content": ResumeString
-                    },
-                    { role: 'user', content: "Hi!" }],
+                    "messages": [...messages,
+                    { role: 'user', content: `Answer in 50 words.
+
+                    Question:Hi` }],
                     "parameters": {
                         "max_new_tokens": 1000,
                         "stop": [

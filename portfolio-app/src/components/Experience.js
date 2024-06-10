@@ -1,16 +1,29 @@
 // src/components/Experience.js
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext, useState} from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+import { Context } from '../App';
 function Experience() {
-
+    
+    const [messages, setMessages] = useContext(Context);
+    const [experiencesVisited, setExperiencesVisited] = useState(false);
     useEffect(() => {
         AOS.init();
     }, []);
 
+    function handleMouseLeave() {
+            setExperiencesVisited(true);
+
+            setMessages((prevMessages) => [...prevMessages,
+                {
+                    "role": "system",
+                    "content": `User Scrolled through SectionName:Experience. Tell user I see you scrolled through my Experience section When interacting with the user.`
+                  }
+            ]);
+    }
     return (
-        <div className='relative p-8 ' >
+        <div className='relative p-8 ' onMouseLeave={experiencesVisited ? null : handleMouseLeave} >
             <h2 className="text-3xl font-semibold text-gray-900 dark:text-white" data-aos="fade-right">Experience</h2>
             <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" data-aos="fade-right" />
             <ol className="relative border-s border-gray-200 dark:border-gray-700" >
@@ -22,7 +35,7 @@ function Experience() {
                     </span>
                     <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white" data-aos="fade-right">Advanced Sterilization Products (Software Engineer Intern) <span className="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ms-3">Current</span></h3>
                     <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500" data-aos="fade-right">Sepetember 2023</time>
-                    <ul class="space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+                    <ul className="space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
                         <li data-aos="fade-right">
                             Developed Python based application for hardware and software validation for ASP Access Technology
                         </li>
@@ -39,7 +52,7 @@ function Experience() {
                     </span>
                     <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white" data-aos="fade-right">EdPlus (Software Developer Assistant)</h3>
                     <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500" data-aos="fade-right">August 2022</time>
-                    <ul class="space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+                    <ul className="space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
                         <li data-aos="fade-right">
                         Developed automated processes on AWS Serverless Framework, facilitating email reminders, file processing, and API development
                         </li>
@@ -59,7 +72,7 @@ function Experience() {
                     </span>
                     <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white" data-aos="fade-right">HHAeXchange (Software Engineer)</h3>
                     <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500" data-aos="fade-right">December 2020</time>
-                    <ul class="space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+                    <ul className="space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
                         <li data-aos="fade-right">
                         Optimized kafka event processing pipeline, resulting in 30% faster processing and 15% lower server costs
                         </li>
