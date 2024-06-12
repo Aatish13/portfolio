@@ -56,7 +56,7 @@ function AISearchBox() {
         if (!response.body) {
             throw new Error("No response body found");
         }
-
+        console.log(response.body);
         const reader = response.body.getReader();
         const decoder = new TextDecoder("utf-8");
 
@@ -76,7 +76,7 @@ function AISearchBox() {
                     continue;
                 }
                 try {
-                    const jsonString = event.startsWith("data: ") ? event.slice(6) : event;
+                    const jsonString = event.startsWith("data:") ? event.slice(5) : event;
                     const jsonEvent = JSON.parse(jsonString);
                     const content = jsonEvent.choices[0].delta.content;
 
