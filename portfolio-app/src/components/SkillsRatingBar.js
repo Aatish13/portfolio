@@ -14,8 +14,8 @@ const SkillsRatingBar = ({ SkillName, SkillRating }) => {
         setMessages((prevMessages) => [...prevMessages,
             {
                 "role": "system",
-                "content": `user watched ${SkillName}. Smartly put that in sentence to show you observe users moves.`
-              }
+                "content": `I have scrolled through ${SkillName} skill. Thank me for it  when i ask about skills and also suggest me to explore the more skills or I have any doubt.`
+            }
         ]);
     }
     return (

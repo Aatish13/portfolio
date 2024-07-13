@@ -18,8 +18,8 @@ function Experience() {
             setMessages((prevMessages) => [...prevMessages,
                 {
                     "role": "system",
-                    "content": `User Scrolled through SectionName:Experience. Tell user I see you scrolled through my Experience section When interacting with the user.`
-                  }
+                    "content": `I have scrolled through  Experience. Thank me for it when i ask about experience and also suggest me to explore the more Experience or I have any doubt.`
+                }
             ]);
     }
     return (
