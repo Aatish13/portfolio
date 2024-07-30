@@ -61,8 +61,7 @@ EXPERIENCE
 Advanced Sterilization Products, Irvine CA, USA
 Position: Software Engineer 
 Duration: July 2023 - Present
-Position: Software Engineer Intern at Asvanced Sterilization Products
-Duration: October 2023 - June 2024
+Was Software Engineer Intern at Asvanced Sterilization Products from October 2023 to June 2024
 Tech Stack: Python, ML, AI
 Responsibilities: Developed Python-based application for hardware and software validation for ASP Access Technology. Developing a chatbot leveraging Azure OpenAI and Cognitive Search to deliver customized responses based on company-specific data.
 
