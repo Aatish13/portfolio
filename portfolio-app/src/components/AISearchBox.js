@@ -136,7 +136,7 @@ function AISearchBox() {
                 </a>
             </div>
             <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Hello, I'm Aatish Dineshbhai Chaudhari</h1>
-            <div className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-200" dangerouslySetInnerHTML={{ __html: replytext }}></div>
+            
             <form className='pt-0 pb-8' onSubmit={handleSendMessage}>
                 <label htmlFor="chat" className="sr-only">Your message</label>
                 <div className="flex items-center px-3 py-2 rounded-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105  ">
@@ -155,6 +155,7 @@ function AISearchBox() {
                     </button>
                 </div>
             </form>
+            <div className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-200" dangerouslySetInnerHTML={{ __html: replytext }}></div>
         </div>
 
     );
