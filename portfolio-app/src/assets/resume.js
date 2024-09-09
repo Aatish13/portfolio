@@ -63,7 +63,12 @@ Position: Software Engineer
 Duration: July 2023 - Present
 Was Software Engineer Intern at Asvanced Sterilization Products from October 2023 to June 2024
 Tech Stack: Python, ML, AI
-Responsibilities: Developed Python-based application for hardware and software validation for ASP Access Technology. Developing a chatbot leveraging Azure OpenAI and Cognitive Search to deliver customized responses based on company-specific data.
+Responsibilities: 
+Derive predictive maintenance solutions forecast failures, optimizing operational efficiency and reducing downtime
+Developed AWS IoT-based solutions with a team of 10, optimizing data collection, analysis, and device maintenance
+Develop Python applications for hardware and software validation, presenting technical updates to stakeholders
+Collaborate with a 10-member team to improve communication and knowledge sharing across departments
+
 
 EdPlus, Scottsdale AZ, USA
 Position: Software Developer Assistant
