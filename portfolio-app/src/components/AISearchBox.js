@@ -14,17 +14,10 @@ function AISearchBox() {
         if (requestText.trim() !== '') {
             query(
                 {
-                    "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+                    "model": "meta-llama/Llama-3.1-8B-Instruct",
                     "messages": [...messages,
                     { role: 'user', content: `Answer in 50 words.
                     Question:${requestText}` }],
-                    "parameters": {
-                        "max_new_tokens": 1000,
-                        "stop": [
-                            "<|end_of_text|>",
-                            "<|eot_id|>"
-                        ]
-                    },
                     "stream": true
                 }
 
@@ -42,7 +35,7 @@ function AISearchBox() {
     async function query(data) {
 
         const response = await fetch(
-            "https://api-inference.huggingface.co/models/meta-llama/Meta-Llama-3-8B-Instruct/v1/chat/completions",
+            "https://router.huggingface.co/v1/chat/completions",
             {
                 headers: {
                     "Authorization": `Bearer ${process.env.REACT_APP_HUGGINGFACE_API_KEY}`,
@@ -99,18 +92,11 @@ function AISearchBox() {
         e.preventDefault()
             query(
                 {
-                    "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+                    "model": "meta-llama/Llama-3.1-8B-Instruct",
                     "messages": [...messages,
                     { role: 'user', content: `Answer in 50 words.
 
                     Question:Hi` }],
-                    "parameters": {
-                        "max_new_tokens": 1000,
-                        "stop": [
-                            "<|end_of_text|>",
-                            "<|eot_id|>"
-                        ]
-                    },
                     "stream": true
                 }
 
@@ -134,6 +120,8 @@ function AISearchBox() {
                         <path stroke="currentColor" strokelinecap="round" strokelinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4" />
                     </svg>
                 </a>
+                
+
             </div>
             <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Hello, I'm Aatish Dineshbhai Chaudhari</h1>
             
