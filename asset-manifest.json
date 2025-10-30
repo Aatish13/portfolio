@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.fb5a9569.css",
-    "main.js": "/portfolio/static/js/main.f7a4976b.js",
+    "main.css": "/portfolio/static/css/main.bfa73d43.css",
+    "main.js": "/portfolio/static/js/main.40042b29.js",
     "static/js/453.f4fbaa6d.chunk.js": "/portfolio/static/js/453.f4fbaa6d.chunk.js",
     "static/media/AugmentedRealityUseCases.mp4": "/portfolio/static/media/AugmentedRealityUseCases.de7ee6a4b6cf205ed9d2.mp4",
     "static/media/stance_detection.webp": "/portfolio/static/media/stance_detection.c6bdc6b01deb52ed10d8.webp",
     "static/media/object-detection-app.jpg": "/portfolio/static/media/object-detection-app.5cb4e642857ed42dfa61.jpg",
+    "static/media/AatishDP.png": "/portfolio/static/media/AatishDP.ce468e1b272973b55a83.png",
     "static/media/AI-Chatbots.png": "/portfolio/static/media/AI-Chatbots.f5a4489a585501bbee26.png",
     "static/media/Edge-computing-image.webp": "/portfolio/static/media/Edge-computing-image.f4cd2715d61247ebf3a3.webp",
     "static/media/Aatish_Chaudhari_Resume.pdf": "/portfolio/static/media/Aatish_Chaudhari_Resume.b5897d7bd0c08c8ae3db.pdf",
     "index.html": "/portfolio/index.html",
-    "main.fb5a9569.css.map": "/portfolio/static/css/main.fb5a9569.css.map",
-    "main.f7a4976b.js.map": "/portfolio/static/js/main.f7a4976b.js.map",
+    "main.bfa73d43.css.map": "/portfolio/static/css/main.bfa73d43.css.map",
+    "main.40042b29.js.map": "/portfolio/static/js/main.40042b29.js.map",
     "453.f4fbaa6d.chunk.js.map": "/portfolio/static/js/453.f4fbaa6d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fb5a9569.css",
-    "static/js/main.f7a4976b.js"
+    "static/css/main.bfa73d43.css",
+    "static/js/main.40042b29.js"
   ]
 }
