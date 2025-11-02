@@ -1,115 +1,67 @@
 import React, { useState, useEffect, useContext } from 'react';
-import ResumeString from '../assets/resume';
+import ChatService from '../services/ChatService';
 import { Context } from '../App';
+
 function AISearchBox() {
     const [replytext, setReplyText] = useState('');
     const [messages, setMessages] = useContext(Context);
     const [requestText, setRequestText] = useState('');
+    const chatService = new ChatService(process.env.REACT_APP_HUGGINGFACE_API_KEY);
+
     useEffect(() => {
         setReplyText("A passionate and experienced Software Engineer with expertise in Cloud Computing, Distributed Systems, Computer Vision, and Data Visualization. How can I help You today?");
     }, []);
 
-    const handleSendMessage = (e) => {
+    const handleSendMessage = async (e) => {
         e.preventDefault();
         if (requestText.trim() !== '') {
-            query(
-                {
-                    "model": "meta-llama/Llama-3.1-8B-Instruct",
-                    "messages": [...messages,
-                    { role: 'user', content: `Answer in 50 words.
-                    Question:${requestText}` }],
-                    "stream": true
-                }
+            const data = {
+                model: "meta-llama/Llama-3.1-8B-Instruct",
+                messages: [
+                    ...messages,
+                    { role: 'user', content: `Answer in 50 words. Question:${requestText}` }
+                ],
+                stream: true
+            };
 
-            ).then((result) => {
-                setMessages((prevMessages) => [...prevMessages,
-                { role: 'user', content: requestText },
-                { role: 'assistant', content: result }]);
-            }).catch((error) => {
+            try {
+                const result = await chatService.query(data, setReplyText);
+                setMessages((prevMessages) => [
+                    ...prevMessages,
+                    { role: 'user', content: requestText },
+                    { role: 'assistant', content: result }
+                ]);
+            } catch (error) {
                 console.error("Error:", error);
-            });
+            }
+
             setRequestText('');
         }
     };
 
-    async function query(data) {
+    const handleStartConversation = async (e) => {
+        e.preventDefault();
+        const data = {
+            model: "meta-llama/Llama-3.1-8B-Instruct",
+            messages: [
+                ...messages,
+                { role: 'user', content: `Answer in 50 words. Question:Hi` }
+            ],
+            stream: true
+        };
 
-        const response = await fetch(
-            "https://router.huggingface.co/v1/chat/completions",
-            {
-                headers: {
-                    "Authorization": `Bearer ${process.env.REACT_APP_HUGGINGFACE_API_KEY}`,
-                    "Content-Type": "application/json"
-                },
-                method: "POST",
-                body: JSON.stringify(data),
-            }
-        );
-
-        if (!response.body) {
-            throw new Error("No response body found");
+        try {
+            const result = await chatService.query(data, setReplyText);
+            setMessages((prevMessages) => [
+                ...prevMessages,
+                { role: 'user', content: "Hi" },
+                { role: 'assistant', content: result }
+            ]);
+        } catch (error) {
+            console.error("Error:", error);
         }
-        console.log(response.body);
-        const reader = response.body.getReader();
-        const decoder = new TextDecoder("utf-8");
-
-        let text = "";
-        while (true) {
-            const { done, value } = await reader.read();
-
-            console.log(done, value);
-            if (done) {
-                break;
-            }
-            const chunk = decoder.decode(value, { stream: true });
-            const events = chunk.split("\n\n");
-            console.log(events)
-            for (const event of events) {
-                if (event.trim() === "") {
-                    continue;
-                }
-                try {
-                    const jsonString = event.startsWith("data:") ? event.slice(5) : event;
-                    const jsonEvent = JSON.parse(jsonString);
-                    const content = jsonEvent.choices[0].delta.content;
-
-                    if (content) {
-                        text += content;
-
-                        setReplyText(text);
-                        await new Promise(resolve => setTimeout(resolve, 10));
-                    }
-                } catch (error) {
-                    console.error("Error parsing event:", error);
-                }
-            }
-        }
-
-        return text;
-    }
-
-    const handleStartConversation = (e) => {
-        e.preventDefault()
-            query(
-                {
-                    "model": "meta-llama/Llama-3.1-8B-Instruct",
-                    "messages": [...messages,
-                    { role: 'user', content: `Answer in 50 words.
-
-                    Question:Hi` }],
-                    "stream": true
-                }
-
-            ).then((result) => {
-                setMessages((prevMessages) => [...prevMessages,
-                { role: 'user', content: requestText },
-                { role: 'assistant', content: result }]);
-            }).catch((error) => {
-                console.error("Error:", error);
-            });
-            setRequestText('');
-        
     };
+
     return (
         <div>
             <div >

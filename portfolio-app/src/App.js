@@ -5,7 +5,6 @@ import Experience from './components/Experience';
 import Introduction from './components/Introduction';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
-import ChatBot from './components/chat_components/ChatBot';
 import Skills from './components/Skills';
 import ResumeString from './assets/resume';
 
