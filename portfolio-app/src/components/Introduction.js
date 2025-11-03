@@ -3,7 +3,7 @@ import React, { useEffect, useContext } from 'react';
 import AOS from 'aos';
 
 import 'aos/dist/aos.css';
-import AatishResume from '../assets/pdfs/Aatish_Chaudhari_Resume.pdf';
+import AatishResume from '../assets/pdfs/Aatish_Chaudhari_Resume_2025.pdf';
 import AISearchBox from './AISearchBox';
 import { Context } from '../App';
 function Introduction() {
