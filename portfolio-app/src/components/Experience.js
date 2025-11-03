@@ -28,13 +28,37 @@ function Experience() {
             <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" data-aos="fade-right" />
             <ol className="relative border-s border-gray-200 dark:border-gray-700" >
                 <li className="mb-10 ms-6">
+                    <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                        <svg className="w-2.5 h-2.5 text-blue-800 dark:text-blue-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                        </svg>
+                    </span>
+                    <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white" data-aos="fade-right">Amazon (Software Development Engineer) <span className="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ms-3">Current</span></h3>
+                    <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500" data-aos="fade-right">December 2024 - Present</time>
+                    <p className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500" data-aos="fade-right">Tech Stack: AWS, Java, Python, Microservices, DynamoDB, Lambda, SparkSQL</p>
+                    <ul className="space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+                        <li data-aos="fade-right">
+                            Delivered regional migration projects achieving VP operational goals with 100% uptime and zero incidents
+                        </li>
+                        <li data-aos="fade-right">
+                            Improved incentive launch process, reducing developer effort by 60% and deployment time by weeks
+                        </li>
+                        <li data-aos="fade-right">
+                            Optimized CI/CD pipelines, decreasing release cycles from multiple weeks to under three days
+                        </li>
+                        <li data-aos="fade-right">
+                            Enhanced user-facing features, lowering customer queries by 40% and improving satisfaction scores
+                        </li>
+                    </ul>
+                </li>
+                <li className="mb-10 ms-6">
             
                     <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
                         <svg className="w-2.5 h-2.5 text-blue-800 dark:text-blue-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                         </svg>
                     </span>
-                    <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white" data-aos="fade-right">Advanced Sterilization Products (Software Engineer) <span className="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ms-3">Current</span></h3>
+                    <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white" data-aos="fade-right">Advanced Sterilization Products (Software Engineer)</h3>
                     <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500" data-aos="fade-right">July 2024</time>
                     
                     <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500" data-aos="fade-right">Software Engineer Intern From Sepetember 2023 to June 2024 </time>
@@ -94,7 +118,7 @@ function Experience() {
                         Expertly integrated advanced security features leveraging AWS Secrets Manager Services and AWS Cloud Watch Logging Service with Structured logging in .Net Core
                         </li>
                     </ul>
-                       </li>
+                </li>
             </ol>
 
 

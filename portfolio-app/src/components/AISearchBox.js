@@ -6,10 +6,24 @@ function AISearchBox() {
     const [replytext, setReplyText] = useState('');
     const [messages, setMessages] = useContext(Context);
     const [requestText, setRequestText] = useState('');
+    const [placeholderIndex, setPlaceholderIndex] = useState(0);
+    const placeholders = [
+        "Ask me anything about Aatish ...",
+        "What are Aatish's skills?",
+        "What projects has Aatish worked on?",
+        "How can Aatish help you?"
+    ];
     const chatService = new ChatService(process.env.REACT_APP_HUGGINGFACE_API_KEY);
 
     useEffect(() => {
         setReplyText("A passionate and experienced Software Engineer with expertise in Cloud Computing, Distributed Systems, Computer Vision, and Data Visualization. How can I help You today?");
+    }, []);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setPlaceholderIndex((prevIndex) => (prevIndex + 1) % placeholders.length);
+        }, 3000); // Change placeholder every 3 seconds
+        return () => clearInterval(interval);
     }, []);
 
     const handleSendMessage = async (e) => {
@@ -81,7 +95,7 @@ function AISearchBox() {
                 <label htmlFor="chat" className="sr-only">Your message</label>
                 <div className="flex items-center px-3 py-2 rounded-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105  ">
                     <input id="chat" rows="1" className="block mx-4 p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Ask me anything about Aatish ..."
+                        placeholder={placeholders[placeholderIndex]}
                         value={requestText}
                         onChange={(e) => setRequestText(e.target.value)}
                         onKeyDown={(e) => e.key === 'Enter' && handleSendMessage(e)}>

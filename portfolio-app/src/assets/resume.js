@@ -58,9 +58,16 @@ Other: Docker, GIT, PostgreSQL, MySQL, MongoDB, Jenkins, CI/CD, Jira, Kubernetes
 
 EXPERIENCE
 
+Amazon, Software Development Engineer, Seattle WA, USA December 2024 - Present
+Tech Stack: AWS, Java, Python, Microservices, DynamoDB, Lambda, SparkSQL
+• Delivered regional migration projects achieving VP operational goals with 100% uptime and zero incidents
+• Improve incentive launch process, reducing developer effort by 60% and deployment time by weeks
+• Optimized CI/CD pipelines, decreasing release cycles from multiple weeks to under three days
+• Enhanced user-facing features, lowering customer queries by 40% and improving satisfaction scores
+
 Advanced Sterilization Products, Irvine CA, USA
 Position: Software Engineer 
-Duration: July 2023 - Present
+Duration: July 2023 - December 2024
 Was Software Engineer Intern at Asvanced Sterilization Products from October 2023 to June 2024
 Tech Stack: Python, ML, AI
 Responsibilities: 
