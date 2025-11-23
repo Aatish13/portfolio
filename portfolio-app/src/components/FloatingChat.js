@@ -67,12 +67,13 @@ const FloatingChat = ({ messages, setMessages, isOpen, setIsOpen }) => {
                     <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-50 dark:bg-gray-900">
                         {messages.filter(m => m.role === 'user' || m.role === 'assistant').map((msg, idx) => (
                             <div key={idx} className={`flex flex-col ${msg.role === 'user' ? 'items-end' : 'items-start'}`}>
-                                <div className={`max-w-[85%] rounded-lg p-2 text-sm ${msg.role === 'user'
-                                    ? 'bg-blue-600 text-white'
-                                    : 'bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 shadow-sm'
-                                    }`}>
-                                    {msg.content}
-                                </div>
+                                <div
+                                    className={`max-w-[85%] rounded-lg p-2 text-sm ${msg.role === 'user'
+                                        ? 'bg-blue-600 text-white'
+                                        : 'bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 shadow-sm'
+                                        } chat-message`}
+                                    dangerouslySetInnerHTML={{ __html: msg.content }}
+                                />
                             </div>
                         ))}
                         {isLoading && (
@@ -86,13 +87,25 @@ const FloatingChat = ({ messages, setMessages, isOpen, setIsOpen }) => {
                     </div>
 
                     <form onSubmit={handleSubmit} className="p-3 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
-                        <input
-                            type="text"
-                            value={input}
-                            onChange={(e) => setInput(e.target.value)}
-                            placeholder="Ask me anything..."
-                            className="w-full bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        />
+                        <div className="flex gap-2 items-center">
+                            <input
+                                type="text"
+                                value={input}
+                                onChange={(e) => setInput(e.target.value)}
+                                placeholder="Ask me anything..."
+                                className="flex-1 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            />
+                            <button
+                                type="submit"
+                                disabled={!input.trim() || isLoading}
+                                className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white rounded-full p-2 transition-colors duration-200 flex items-center justify-center"
+                                aria-label="Send message"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                                </svg>
+                            </button>
+                        </div>
                     </form>
                 </div>
             )}
