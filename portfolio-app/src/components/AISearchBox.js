@@ -89,7 +89,7 @@ function AISearchBox() {
                 
 
             </div>
-            <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Hello, I'm Aatish Dineshbhai Chaudhari</h1>
+            <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Hello, I'm Aatish</h1>
             
             <form className='pt-0 pb-8' onSubmit={handleSendMessage}>
                 <label htmlFor="chat" className="sr-only">Your message</label>

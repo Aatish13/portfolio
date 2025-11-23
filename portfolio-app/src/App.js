@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Experience from './components/Experience';
@@ -7,11 +6,17 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Skills from './components/Skills';
 import ResumeString from './assets/resume';
+import FloatingChat from './components/FloatingChat';
+import CursorFollower from './components/CursorFollower';
 
 export const Context = React.createContext();
-function App() {
+export const InteractionContext = React.createContext();
 
+function App() {
   const [messages, setMessages] = useState([]);
+  const [chatOpen, setChatOpen] = useState(false);
+  const [followerMessage, setFollowerMessage] = useState('');
+  const [expression, setExpression] = useState('neutral');
 
   useEffect(() => {
     setMessages([
@@ -20,21 +25,51 @@ function App() {
         "content": ResumeString
       }
     ]);
-
   }, []);
 
+  const handleInteraction = (message, type = 'follower', expr = 'neutral') => {
+    if (type === 'follower') {
+      setFollowerMessage(message);
+      setExpression(expr);
+      // Clear message after a few seconds
+      setTimeout(() => {
+        setFollowerMessage('');
+        setExpression('neutral');
+      }, 3000);
+    } else if (type === 'context') {
+      // Add hidden system message for AI context
+      // Check if message already exists to avoid duplicates
+      setMessages(prev => {
+        const exists = prev.some(m => m.content === message);
+        if (exists) return prev;
+        return [...prev, { role: "system", content: message }];
+      });
+    } else if (type === 'expression') {
+      setExpression(expr);
+    }
+  };
 
   return (
-    <Context.Provider value={[ messages, setMessages]}>
-      <div className="flex bg-white dark:bg-gray-900">
-        <div className="w-3/3">
-          <Introduction></Introduction>
-          <Experience></Experience>
-          <Skills></Skills>
-          <Projects></Projects>
-          <Contact></Contact>
+    <Context.Provider value={[messages, setMessages]}>
+      <InteractionContext.Provider value={handleInteraction}>
+        <div className="bg-white dark:bg-gray-900 min-h-screen"> {/* Removed cursor-none */}
+          <div className="w-full">
+            <Introduction />
+            <Experience />
+            <Skills />
+            <Projects />
+            <Contact />
+          </div>
+
+          <FloatingChat
+            messages={messages}
+            setMessages={setMessages}
+            isOpen={chatOpen}
+            setIsOpen={setChatOpen}
+          />
+          <CursorFollower message={followerMessage} expression={expression} />
         </div>
-      </div>
+      </InteractionContext.Provider>
     </Context.Provider>
   );
 }

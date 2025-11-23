@@ -15,7 +15,7 @@ const ProjectCard = ({ title, content, imageUrl, videoUrl, githubUrl }) => {
         console.log('Mouse left');
         setMessages((prevMessages) => [...prevMessages,
         {
-            "role": "user",
+            "role": "system",
             "content": `I have scrolled through ${title} project. Thank me for it when i ask about projects and also suggest me to explore the more projects or I have any doubt.`
         }
         ]);
@@ -24,7 +24,7 @@ const ProjectCard = ({ title, content, imageUrl, videoUrl, githubUrl }) => {
         console.log('Read more clicked');
         setMessages((prevMessages) => [...prevMessages,
         {
-            "role": "user",
+            "role": "system",
             "content": `I have clicked read more of ${title} project. Thank me for it when i ask about projects  and also suggest me to explore the more projects or I have any doubt.`
         }
         ]);

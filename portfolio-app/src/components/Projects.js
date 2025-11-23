@@ -1,6 +1,4 @@
-// src/components/Projects.js
-
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext, useRef } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ProjectCard from './ProjectCard';
@@ -9,8 +7,14 @@ import EdgeComputingImage from '../assets/images/Edge-computing-image.webp';
 import ObjectDetectionImage from '../assets/images/object-detection-app.jpg';
 import StanceDetectionImage from '../assets/images/stance_detection.webp';
 import AiBotImage from '../assets/images/AI-Chatbots.png';
+import { InteractionContext } from '../App';
+
 function Projects() {
   const [projects, setProjects] = useState([]);
+  const handleInteraction = useContext(InteractionContext);
+  const observerRef = useRef(null);
+  const viewedProjects = useRef(new Set());
+
   useEffect(() => {
     AOS.init();
     setProjects([
@@ -54,19 +58,49 @@ function Projects() {
 
     ]);
   }, []);
+
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const projectTitle = entry.target.getAttribute('data-project-title');
+          if (projectTitle && !viewedProjects.current.has(projectTitle)) {
+            viewedProjects.current.add(projectTitle);
+            // Send hidden context message
+            handleInteraction(`User has scrolled to/viewed the project: ${projectTitle}. If they ask about projects, acknowledge this.`, 'context');
+          }
+        }
+      });
+    }, { threshold: 0.5 }); // Trigger when 50% visible
+
+    const cards = document.querySelectorAll('.project-card-container');
+    cards.forEach(card => observerRef.current.observe(card));
+
+    return () => {
+      if (observerRef.current) observerRef.current.disconnect();
+    };
+  }, [projects, handleInteraction]);
+
   return (
     <div className='relative p-8 bg-white dark:bg-gray-900'>
       <h2 className="text-3xl font-semibold text-gray-900 dark:text-white py-2">Projects</h2>
       <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {projects.map((project, index) => (
-          <ProjectCard 
-          key={index} 
-          title={project.title} 
-          content={project.content} 
-          imageUrl={project.imageUrl} 
-          videoUrl={project.videoUrl} 
-          githubUrl={project.githubUrl} />
+          <div
+            key={index}
+            className="project-card-container"
+            data-project-title={project.title}
+            onMouseEnter={() => handleInteraction(`Want to know more about ${project.title}?`, 'follower', 'happy')}
+          >
+            <ProjectCard
+              title={project.title}
+              content={project.content}
+              imageUrl={project.imageUrl}
+              videoUrl={project.videoUrl}
+              githubUrl={project.githubUrl}
+            />
+          </div>
         ))}
       </div>
     </div>
