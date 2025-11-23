@@ -15,3 +15,49 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Chat message HTML content styling */
+.chat-message a {
+  text-decoration: underline;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.chat-message a:hover {
+  opacity: 0.8;
+}
+
+/* Links in user messages (blue background) */
+.bg-blue-600 a {
+  color: #e0f2fe;
+}
+
+/* Links in assistant messages (white/gray background) */
+.bg-white a,
+.dark .dark\:bg-gray-700 a {
+  color: #2563eb;
+}
+
+.dark .dark\:bg-gray-700 a {
+  color: #60a5fa;
+}
+
+/* Other HTML elements in chat */
+.chat-message strong {
+  font-weight: 600;
+}
+
+.chat-message em {
+  font-style: italic;
+}
+
+.chat-message ul,
+.chat-message ol {
+  margin-left: 1.25rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.chat-message li {
+  margin-bottom: 0.125rem;
+}
