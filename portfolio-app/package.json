@@ -4,6 +4,7 @@
   "homepage": "https://aatish13.github.io/portfolio/",
   "private": true,
   "dependencies": {
+    "@mlc-ai/web-llm": "^0.2.86",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",

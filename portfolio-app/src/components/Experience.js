@@ -6,7 +6,7 @@ import { Context, InteractionContext } from '../App';
 
 function Experience() {
 
-    const [messages, setMessages] = useContext(Context);
+    const [, setMessages] = useContext(Context);
     const handleInteraction = useContext(InteractionContext);
     const [experiencesVisited, setExperiencesVisited] = useState(false);
     useEffect(() => {
@@ -34,21 +34,34 @@ function Experience() {
                             <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                         </svg>
                     </span>
-                    <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white" data-aos="fade-right">Amazon (Software Development Engineer) <span className="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ms-3">Current</span></h3>
-                    <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500" data-aos="fade-right">December 2024 - Present</time>
+                    <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white" data-aos="fade-right">Amazon (Software Development Engineer II) <span className="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ms-3">Current</span></h3>
+                    <time className="block mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500" data-aos="fade-right">October 2026 - Present</time>
+                    <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500" data-aos="fade-right">Software Development Engineer: December 2024 - October 2026</time>
                     <p className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500" data-aos="fade-right">Tech Stack: AWS, Java, Python, Microservices, DynamoDB, Lambda, SparkSQL</p>
                     <ul className="space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
                         <li data-aos="fade-right">
-                            Delivered regional migration projects achieving VP operational goals with 100% uptime and zero incidents
+                            Promoted to Software Development Engineer II (SDE II) starting October 2026
                         </li>
                         <li data-aos="fade-right">
-                            Improved incentive launch process, reducing developer effort by 60% and deployment time by weeks
+                            Architected a sampling module, reducing manual effort from 1 week to 4 hours via AWS workflows
                         </li>
                         <li data-aos="fade-right">
-                            Optimized CI/CD pipelines, decreasing release cycles from multiple weeks to under three days
+                            Built an LLM annotation pipeline with human-in-loop, cutting labeling latency from 3 weeks to 2 days
                         </li>
                         <li data-aos="fade-right">
-                            Enhanced user-facing features, lowering customer queries by 40% and improving satisfaction scores
+                            Automated end-to-end model training and error analysis, accelerating overall experimentation cycles
+                        </li>
+                        <li data-aos="fade-right">
+                            Deployed deferrable operators replacing Lambda polling; increased concurrency and cut costs by 20%
+                        </li>
+                        <li data-aos="fade-right">
+                            Boosted throughput by 40% and cut costs by eliminating idle compute via asynchronous execution
+                        </li>
+                        <li data-aos="fade-right">
+                            Executed regional migrations with 100% uptime and zero production incidents for high availability
+                        </li>
+                        <li data-aos="fade-right">
+                            Optimized CI/CD pipelines and IaC, reducing global release cycles from weeks to under 3 days
                         </li>
                     </ul>
                 </li>

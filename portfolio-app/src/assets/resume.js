@@ -58,12 +58,17 @@ Other: Docker, GIT, PostgreSQL, MySQL, MongoDB, Jenkins, CI/CD, Jira, Kubernetes
 
 EXPERIENCE
 
-Amazon, Software Development Engineer, Seattle WA, USA December 2024 - Present
+Amazon, Software Development Engineer II, Seattle WA, USA October 2026 - Present
+(Software Development Engineer: December 2024 - October 2026)
 Tech Stack: AWS, Java, Python, Microservices, DynamoDB, Lambda, SparkSQL
-• Delivered regional migration projects achieving VP operational goals with 100% uptime and zero incidents
-• Improve incentive launch process, reducing developer effort by 60% and deployment time by weeks
-• Optimized CI/CD pipelines, decreasing release cycles from multiple weeks to under three days
-• Enhanced user-facing features, lowering customer queries by 40% and improving satisfaction scores
+• Promoted to Software Development Engineer II (SDE II) starting October 2026
+• Architected a sampling module, reducing manual effort from 1 week to 4 hours via AWS workflows
+• Built an LLM annotation pipeline with human-in-loop, cutting labeling latency from 3 weeks to 2 days
+• Automated end-to-end model training and error analysis, accelerating overall experimentation cycles
+• Deployed deferrable operators replacing Lambda polling; increased concurrency and cut costs by 20%
+• Boosted throughput by 40% and cut costs by eliminating idle compute via asynchronous execution
+• Executed regional migrations with 100% uptime and zero production incidents for high availability
+• Optimized CI/CD pipelines and IaC, reducing global release cycles from weeks to under 3 days
 
 Advanced Sterilization Products, Irvine CA, USA
 Position: Software Engineer 

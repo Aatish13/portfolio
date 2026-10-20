@@ -28,9 +28,7 @@ const FloatingChat = ({ messages, setMessages, isOpen, setIsOpen }) => {
         setIsLoading(true);
 
         try {
-            let replyContent = "";
             const setReplyText = (text) => {
-                replyContent = text;
                 setMessages([...newMessages, { role: "assistant", content: text }]);
             };
 
