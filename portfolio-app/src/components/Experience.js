@@ -40,9 +40,6 @@ function Experience() {
                     <p className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500" data-aos="fade-right">Tech Stack: AWS, Java, Python, Microservices, DynamoDB, Lambda, SparkSQL</p>
                     <ul className="space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
                         <li data-aos="fade-right">
-                            Promoted to Software Development Engineer II (SDE II) starting October 2026
-                        </li>
-                        <li data-aos="fade-right">
                             Architected a sampling module, reducing manual effort from 1 week to 4 hours via AWS workflows
                         </li>
                         <li data-aos="fade-right">
