@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.77811f0b.css",
-    "main.js": "/portfolio/static/js/main.76596fcc.js",
+    "main.css": "/portfolio/static/css/main.f03fb9b3.css",
+    "main.js": "/portfolio/static/js/main.dc59c80b.js",
     "static/js/206.aa0dffed.chunk.js": "/portfolio/static/js/206.aa0dffed.chunk.js",
     "static/media/AugmentedRealityUseCases.mp4": "/portfolio/static/media/AugmentedRealityUseCases.de7ee6a4b6cf205ed9d2.mp4",
     "static/media/stance_detection.webp": "/portfolio/static/media/stance_detection.c6bdc6b01deb52ed10d8.webp",
@@ -12,7 +12,7 @@
     "index.html": "/portfolio/index.html"
   },
   "entrypoints": [
-    "static/css/main.77811f0b.css",
-    "static/js/main.76596fcc.js"
+    "static/css/main.f03fb9b3.css",
+    "static/js/main.dc59c80b.js"
   ]
 }
