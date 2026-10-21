@@ -1,4 +1,5 @@
 import { CreateMLCEngine } from "@mlc-ai/web-llm";
+import { Analytics } from './AnalyticsService';
 
 // Singleton engine instance across the application
 let mlcEngine = null;
@@ -70,6 +71,7 @@ class ChatService {
             this.progress = 100;
             this.statusText = "Instant AI Ready";
             this.notify();
+            Analytics.modelReady(0, false);
             return null;
         }
 
@@ -79,6 +81,7 @@ class ChatService {
         this.notify();
 
         engineInitPromise = (async () => {
+            const loadStart = Date.now();
             try {
                 const engine = await CreateMLCEngine(this.selectedModel, {
                     initProgressCallback: (report) => {
@@ -98,6 +101,7 @@ class ChatService {
                 this.progress = 100;
                 this.statusText = "AI Model Ready";
                 this.notify();
+                Analytics.modelReady(Date.now() - loadStart, true);
                 return engine;
             } catch (err) {
                 console.warn("[WebLLM] Error initializing in-browser LLM:", err);
