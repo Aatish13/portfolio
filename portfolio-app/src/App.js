@@ -8,6 +8,7 @@ import Skills from './components/Skills';
 import ResumeString from './assets/resume';
 import FloatingChat from './components/FloatingChat';
 import CursorFollower from './components/CursorFollower';
+import { chatService } from './services/ChatService';
 
 export const Context = React.createContext();
 export const InteractionContext = React.createContext();
@@ -19,6 +20,9 @@ function App() {
   const [expression, setExpression] = useState('neutral');
 
   useEffect(() => {
+    // Automatically preload and cache in-browser AI model on website load
+    chatService.preload();
+
     setMessages([
       {
         "role": "system",

@@ -17,6 +17,11 @@ code {
 }
 
 /* Chat message HTML content styling */
+.chat-message {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
 .chat-message a {
   text-decoration: underline;
   cursor: pointer;
@@ -34,11 +39,13 @@ code {
 
 /* Links in assistant messages (white/gray background) */
 .bg-white a,
-.dark .dark\:bg-gray-700 a {
+.dark .dark\:bg-gray-700 a,
+.dark .dark\:bg-gray-800 a {
   color: #2563eb;
 }
 
-.dark .dark\:bg-gray-700 a {
+.dark .dark\:bg-gray-700 a,
+.dark .dark\:bg-gray-800 a {
   color: #60a5fa;
 }
 
